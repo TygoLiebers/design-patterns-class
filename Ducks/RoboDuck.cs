@@ -4,17 +4,17 @@ using StrategyPattern.Interfaces.SwimBehavior;
 
 namespace StrategyPattern.Ducks
 {
-    internal class MallardDuck : Duck
+    internal class RoboDuck : Duck
     {
-        public MallardDuck()
+        public RoboDuck()
         {
             quackBehavior = new RegularQuack();
             flyBehavior = new FlyWithWings();
-            swimBehavior = new Float();
+            swimBehavior = new Sink();
         }
         public override void Display()
         {
-            Console.WriteLine("I'm a Mallard Duck");
+            Console.WriteLine("I'm a Robo Duck");
         }
     }
 }

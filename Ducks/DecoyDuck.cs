@@ -1,5 +1,6 @@
 ﻿using StrategyPattern.Interfaces.FlyBehavior;
 using StrategyPattern.Interfaces.QuackBehavior;
+using StrategyPattern.Interfaces.SwimBehavior;
 
 namespace StrategyPattern.Ducks
 {
@@ -9,6 +10,7 @@ namespace StrategyPattern.Ducks
         {
             quackBehavior = new MuteQuack();
             flyBehavior = new FlyNoWay();
+            swimBehavior = new Float();
         }
         public override void Display()
         {
