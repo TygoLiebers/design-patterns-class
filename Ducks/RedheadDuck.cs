@@ -8,9 +8,9 @@ namespace StrategyPattern.Ducks
     {
         public RedheadDuck()
         {
-            quackBehavior = new RegularQuack();
-            flyBehavior = new FlyWithWings();
-            swimBehavior = new Float();
+            SetQuackBehavior(new RegularQuack());
+            SetFlyBehavior(new FlyWithWings());
+            SetSwimBehavior(new Float());
         }
         public override void Display()
         {

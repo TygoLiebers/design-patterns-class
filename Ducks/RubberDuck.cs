@@ -8,9 +8,9 @@ namespace StrategyPattern.Ducks
     {
         public RubberDuck()
         {
-            quackBehavior = new Squeak();
-            flyBehavior = new FlyNoWay();
-            swimBehavior = new Float();
+            SetQuackBehavior(new Squeak());
+            SetFlyBehavior(new FlyNoWay());
+            SetSwimBehavior(new Float());
         }
         public override void Display()
         {

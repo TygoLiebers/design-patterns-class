@@ -1,32 +1,43 @@
 ﻿using StrategyPattern.Interfaces.FlyBehavior;
 using StrategyPattern.Interfaces.QuackBehavior;
 using StrategyPattern.Interfaces.SwimBehavior;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 namespace StrategyPattern.Ducks
 {
     internal abstract class Duck
     {
 
-        protected QuackBehavior quackBehavior;
-        protected FlyBehavior flyBehavior;
-        protected SwimBehavior swimBehavior;
+        private QuackBehavior? quackBehavior;
+        private FlyBehavior? flyBehavior;
+        private SwimBehavior? swimBehavior;
         public abstract void Display();
 
         public void PerformQuack()
         {
-            quackBehavior.Quack();
+            quackBehavior?.Quack();
         }
 
         public void PerformFly()
         {
-            flyBehavior.Fly();
+            flyBehavior?.Fly();
         }
         public void PreformSwim()
         {
-            swimBehavior.Swim();
+            swimBehavior?.Swim();
+        }
+
+        public void SetFlyBehavior(FlyBehavior f) {
+            flyBehavior = f;
+        }
+
+        public void SetQuackBehavior(QuackBehavior q)
+        {
+            quackBehavior = q;
+        }
+
+        public void SetSwimBehavior(SwimBehavior s)
+        {
+            swimBehavior = s;
         }
     }
 }

@@ -8,9 +8,9 @@ namespace StrategyPattern.Ducks
     {
         public DecoyDuck()
         {
-            quackBehavior = new MuteQuack();
-            flyBehavior = new FlyNoWay();
-            swimBehavior = new Float();
+            SetQuackBehavior(new MuteQuack());
+            SetFlyBehavior(new FlyNoWay());
+            SetSwimBehavior(new Float());
         }
         public override void Display()
         {
