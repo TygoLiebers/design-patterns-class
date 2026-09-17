@@ -113,6 +113,49 @@ namespace DecoratorPattern
             chocolateMilk = new Milk(chocolateMilk);
             chocolateMilk = new Milk(chocolateMilk);
             PrintBeverage(chocolateMilk);
+
+            Beverage demiCreme = new Espresso();
+            demiCreme = new Espresso(demiCreme);
+            demiCreme = new Cream(demiCreme);
+            demiCreme = new Cream(demiCreme);
+            PrintBeverage(demiCreme);
+
+            Beverage latteMacchiato = new Espresso();
+            latteMacchiato = new SteamedMilk(latteMacchiato);
+            latteMacchiato = new SteamedMilk(latteMacchiato);
+            latteMacchiato = new MilkFoam(latteMacchiato);
+            PrintBeverage(latteMacchiato);
+
+            Beverage freddo = new Espresso();
+            freddo = new Liqour(freddo);
+            freddo = new Ice(freddo);
+            PrintBeverage(freddo);
+
+            Beverage frappuccino = new Espresso();
+            frappuccino = new Ice(frappuccino);
+            frappuccino = new SteamedMilk(frappuccino);
+            frappuccino = new Whip(frappuccino);
+            PrintBeverage(frappuccino);
+
+            Beverage caramelFrappuccino = new Espresso();
+            caramelFrappuccino = new Ice(caramelFrappuccino);
+            caramelFrappuccino = new SteamedMilk(caramelFrappuccino);
+            caramelFrappuccino = new Cream(caramelFrappuccino);
+            caramelFrappuccino = new Syrup(caramelFrappuccino);
+            PrintBeverage(caramelFrappuccino);
+
+            Beverage frappe = new Espresso();
+            frappe = new SteamedMilk(frappe);
+            frappe = new SteamedMilk(frappe);
+            frappe = new IceCream(frappe);
+            PrintBeverage(frappe);
+
+            Beverage irishCoffee = new Espresso();
+            irishCoffee = new Espresso(irishCoffee);
+            irishCoffee = new Whisky(irishCoffee);
+            irishCoffee = new Whip(irishCoffee);
+            PrintBeverage(irishCoffee);
+            
         }
 
         static void PrintBeverage(Beverage beverage)

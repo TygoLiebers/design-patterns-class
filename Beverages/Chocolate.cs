@@ -1,10 +1,10 @@
 ﻿namespace DecoratorPattern.Beverages
 {
-    internal class Chocolate : Beverage
+    internal class Espresso : Beverage
     {
-        public Chocolate(Beverage beverage = null)
+        public Espresso(Beverage beverage = null)
         {
-            description = "Chocolate";
+            description = "Espresso";
             this.baseBeverage = beverage;
         
         }
@@ -20,9 +20,9 @@
         {
             if (baseBeverage != null)
             {
-                return 2.49 + baseBeverage.cost();
+                return 1.99 + baseBeverage.cost();
             }
-            return 2.49;
+            return 1.99;
         }
     }
 }

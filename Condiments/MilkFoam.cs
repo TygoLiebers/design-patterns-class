@@ -2,21 +2,21 @@
 
 namespace DecoratorPattern.Condiments
 {
-    internal class MilkFoam : CondimentDecorator
+    internal class HalfMilk : CondimentDecorator
     {
-        public MilkFoam(Beverage beverage)
+        public HalfMilk(Beverage beverage)
         {
             this.baseBeverage = beverage;
         }
 
         public override double cost()
         {
-            return 0.10 + baseBeverage.cost();
+            return 0.15 + baseBeverage.cost();
         }
 
         public override string GetDescription()
         {
-            return baseBeverage.GetDescription() + ", MilkFoam";
+            return baseBeverage.GetDescription() + ", HalfMilk";
         }
     }
 }
