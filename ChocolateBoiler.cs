@@ -14,12 +14,24 @@ namespace Singleton
         public bool IsEmpty { get { return this.empty; } }
         public bool IsBoiled { get { return this.boiled; } }
 
+        private static readonly object _balanceLock;
+        private static ChocolateBoiler uniqueInstance;
+
         // This code is only started when the boiler is empty
         public ChocolateBoiler()
         {
             empty = true;
             boiled = false;
         }
+
+        public static ChocolateBoiler GetInstance() {
+            if (uniqueInstance == null) 
+                lock (_balanceLock) 
+                    if (uniqueInstance == null)
+                        uniqueInstance = new ChocolateBoiler();
+            return uniqueInstance;
+        }
+
         // To fill the boiler it must be empty and once it is full, we set the empty and boiled flag
         public void fill()
         {
